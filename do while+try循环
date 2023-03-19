@@ -1,0 +1,66 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace whilexh
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int score = 0;
+            int sum = 0;
+            do
+            {
+                Console.WriteLine("请在这输入第一个数字：");
+                string str1 = Console.ReadLine();
+                if (str1.ToLower()=="end")
+                {
+                    break;
+                }
+                int x;
+                try
+                {
+                    x = int.Parse(str1);
+                }
+                catch
+                {
+                    Console.WriteLine("必须输入数字");
+                    continue;
+                }
+
+                Console.WriteLine("请在这输入第二个数字：");
+                string str2 = Console.ReadLine();
+                if (str2.ToLower() == "end")
+                {
+                    break;
+                }
+                int y;
+                try
+                {
+                    y = int.Parse(str2);
+                }
+                catch
+                {
+                    Console.WriteLine("必须输入数字");
+                    continue;
+                }
+                sum = x + y;
+                if (sum == 100)
+                {
+                    score++;
+                    Console.WriteLine("你做对了!{0}+{1}={2}", x, y, sum);
+                }
+                else
+                {
+                    Console.WriteLine("好像不太正确呢?{0}+{1}={2}", x, y, sum);
+                }
+            } while (sum == 100);
+            Console.WriteLine("你的分数是{0}", score);
+            Console.WriteLine("请大侠重新来过");
+
+        }
+    }
+}
