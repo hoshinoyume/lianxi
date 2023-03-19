@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+
+namespace ConsoleApp4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int score = 50;
+            if (score >= 0 & score <= 100)
+            {
+                if (score >= 60)
+                {
+                    Console.WriteLine("Pass");
+                    if (score < 80)
+                    {
+                        Console.WriteLine("B");
+                    }
+                    else
+                        Console.WriteLine("A");
+                }
+                else
+                {
+                    Console.WriteLine("Failed");
+                    if (score < 60 & score >= 40)
+                    {
+                        Console.WriteLine("C");
+                    }
+                    else { Console.WriteLine("D"); }
+
+                }
+            }
+            else
+            {
+                Console.WriteLine("请输入正确分数");
+            }
+        }
+    }
+}
